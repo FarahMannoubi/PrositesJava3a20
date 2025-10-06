@@ -1,8 +1,9 @@
+package Entity;
 public class Animal {
-    String family;
-	String name;
-	int age;
-	boolean isMammal;
+   public String family;
+    public String name;
+    public   int age;
+    public  boolean isMammal;
     public Animal() {}
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
@@ -13,7 +14,7 @@ public class Animal {
 
     public String toString() {
         return "Animal [family="
-                + family + ", name=" + name + ", age=" + age;
+                + family + ", name=" + name + ", age=" + age+ ", isMammal="+isMammal+"]";
     }
 
 }
