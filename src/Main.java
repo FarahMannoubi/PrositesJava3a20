@@ -7,25 +7,25 @@ public class Main {
     public static void main(String[] args) {
 
 Animal chien = new Animal();
-        chien.family="chien";
-        chien.name="loulou";
-        chien.age=1;
-        chien.isMammal=true;
-        System.out.println(chien.name);
-        System.out.println(chien.age);
-        System.out.println(chien.isMammal);
+        chien.setName("chien");
+        chien.setName("loulou");
+        chien.setAge(1);
+        chien.setMammal(true);
+        System.out.println(chien.getName());
+        System.out.println(chien.getAge());
+        System.out.println(chien.isMammal());
         Animal chat = new Animal("chat","michou",2,true);
-System.out.println(chat.name);
-System.out.println(chat.age);
-System.out.println(chat.isMammal);
+System.out.println(chat.getName());
+System.out.println(chat.getAge());
+System.out.println(chat.getName());
 System.out.println(chien);
 System.out.println(chat);
 Zoo zoo = new Zoo();
-System.out.println(zoo.animals.length);
+System.out.println(zoo.getAnimals().length);
 Zoo zoo2 = new Zoo("My zoo","Nabeul");
-System.out.println(zoo2.animals.length);
+System.out.println(zoo2.getAnimals().length);
         Zoo zoo3 = new Zoo("My zoo","Nabeul");
-        System.out.println(zoo3.animals.length);
+        System.out.println(zoo3.getAnimals().length);
 
        // System.out.println(zoo2.addAnimal(chien));
         System.out.println(zoo2.searchAnimal(new Animal()));

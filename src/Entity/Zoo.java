@@ -1,17 +1,17 @@
 package Entity;
 
 public class Zoo {
-   public Animal[] animals = new Animal[25] ;
-   String name;
-	String city;
-   final	int NbrCages=25;
-    int nbAnimals = 0;
+   private Animal[] animals = new Animal[25] ;
+  private String name;
+    private String city;
+    private final	int NbrCages=25;
+    private int nbAnimals = 0;
 
     public Zoo() {}
     public Zoo( String name, String city) {
     this.animals  = new Animal[NbrCages] ;
-    this.name = name;
-    this.city = city;
+     this.setName(name);
+     this.city = city;
     }
 
 
@@ -33,6 +33,8 @@ public class Zoo {
     public boolean addAnimal1(Animal animal){
         if (searchAnimal(animal)!=-1)
             return true;
+        if (this.isZooFull()==true)
+            return false;
         if (animals.length >= nbAnimals) {
             if (animals[nbAnimals] != null) {
                 nbAnimals++;
@@ -58,7 +60,7 @@ return false;
     public int searchAnimal(Animal animal){
     for (int i = 0; i < animals.length; i++) {
         if(animals[i] == null)return -1;
-       if(animals[i].name == animal.name)
+       if(animals[i].getName() == animal.getName())
            return i;
     }
 return -1;
@@ -111,4 +113,42 @@ return -1;
         return "Zoo :[ name : "+name+", city : "+city+"] ";
     }
 
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        if(name == null){
+            System.out.println("name is null");
+            return;
+        }
+        this.name = name;
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getNbrCages() {
+        return NbrCages;
+    }
+
+    public int getNbAnimals() {
+        return nbAnimals;
+    }
+
+    public void setNbAnimals(int nbAnimals) {
+        this.nbAnimals = nbAnimals;
+    }
 }
