@@ -119,6 +119,8 @@ return -1;
             return;
         }
         for(Aquatic a : aquaticAnimals){
+
+            if (aquatic.equals(a)==false)
             aquaticAnimals[i] = aquatic;
             i++;
             return;
@@ -138,7 +140,29 @@ return -1;
         }
     }
     public float maxPenguinSwimmingDepth(){
-        return 1;
+        float maxPenguinSwimmingDepth =0;
+        for (Aquatic a : aquaticAnimals) {
+            if (a instanceof Penguin p) {
+               // Penguin p = (Penguin) a;
+               if(p.getSwimmingDepth()>maxPenguinSwimmingDepth)
+                   maxPenguinSwimmingDepth = p.getSwimmingDepth();
+            }
+        }
+        return maxPenguinSwimmingDepth;
+    }
+    public void displayNumberOfAquaticsByType(){
+        int nbrPenguins = 0;
+        int nbrDolphins = 0;
+        for (Aquatic a : aquaticAnimals) {
+           if (a instanceof Penguin) {
+               nbrPenguins++;
+           }
+           if (a instanceof Dolphin) {
+               nbrDolphins++;
+           }
+        }
+        System.out.println("nbr Penguins in aquatics : "+nbrPenguins);
+        System.out.println("nbr Dolphins in aquatics : "+nbrDolphins);
     }
 
     public String toString(){

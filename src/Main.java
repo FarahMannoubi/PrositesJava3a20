@@ -58,14 +58,20 @@ Animal animal =new Animal();
 Animal animal1 = new Dolphin(12);
 Dolphin dolphin3 = (Dolphin) animal1;
 
-zoo.addAquaticAnimal(d2);
-zoo.addAquaticAnimal(new Dolphin(1));
-zoo.addAquaticAnimal(dolphin3);
-zoo.addAquaticAnimal(p1);
+//zoo.addAquaticAnimal(d2);
+//zoo.addAquaticAnimal(new Dolphin(1));
+//zoo.addAquaticAnimal(dolphin3);
+//zoo.addAquaticAnimal(p1);
 System.out.println("////////////////////////////");
 zoo.afficheraquaticAnimals();
 zoo.swimAffichage();
-
+System.out.println(zoo.maxPenguinSwimmingDepth());
+zoo.displayNumberOfAquaticsByType();
+Aquatic animal2=new Penguin("family","test",1,true,"",12);
+Aquatic animal3=new Penguin("","test",1,true,"",12);
+zoo.addAquaticAnimal(animal2);
+zoo.addAquaticAnimal(animal3);
+zoo.afficheraquaticAnimals();
     }
 
     }
