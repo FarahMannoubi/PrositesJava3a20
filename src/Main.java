@@ -39,20 +39,32 @@ zoo2.afficherAnimals();
 System.out.println(zoo2.isZooFull());
 System.out.println("Zoo is full : "+Zoo.comparerZoo(zoo, zoo2));
 Animal a1=new Animal();
-Aquatic aq2=new Aquatic("famille4","momo",10,true,"habitat3");
+//Aquatic aq2=new Aquatic("famille4","momo",10,true,"habitat3");
 
 Terrestral ter2=new Terrestral("famille1","sisi",20,true,4);
 Dolphin d2=new Dolphin("famille2","soso",20,true,4);
 Penguin p1=new Penguin("famille3","sasa",30,false,"habit1",22);
 System.out.println(a1);
-System.out.println(aq2);
 System.out.println(ter2);
 System.out.println(d2);
 System.out.println(p1);
 d2.swim();
-aq2.swim();
 p1.swim(12);
+Animal animal =new Animal();
+//Dolphin dolphin = (Dolphin) animal;
 
+//Dolphin dolphin2 = (Dolphin) new Animal();
+
+Animal animal1 = new Dolphin(12);
+Dolphin dolphin3 = (Dolphin) animal1;
+
+zoo.addAquaticAnimal(d2);
+zoo.addAquaticAnimal(new Dolphin(1));
+zoo.addAquaticAnimal(dolphin3);
+zoo.addAquaticAnimal(p1);
+System.out.println("////////////////////////////");
+zoo.afficheraquaticAnimals();
+zoo.swimAffichage();
 
     }
 

@@ -2,7 +2,12 @@ package Entity;
 
 public non-sealed class Dolphin extends Aquatic {
 private float swimmingSpeed;
-public Dolphin(String family, String name, int age, boolean isMammal,float swimmingSpeed) {
+
+    public Dolphin(float swimmingSpeed) {
+        this.swimmingSpeed = swimmingSpeed;
+    }
+
+    public Dolphin(String family, String name, int age, boolean isMammal, float swimmingSpeed) {
 this.habitat =habitat;
 this.name=name;
 this.age=age;
