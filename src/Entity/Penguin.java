@@ -7,9 +7,12 @@ public final class Penguin extends Aquatic{
         this.swimmingDepth = swimmingDepth;
     }
     public void swim(int swimmingDepth){
-        super.swim();
         System.out.println("Penguin swimming depth is "+swimmingDepth);
     }
+    public void swim(){
+        System.out.println("Penguin swimming depth is "+swimmingDepth);
+    }
+
     public String toString(){
         return "Penguin "+super.toString();
     }

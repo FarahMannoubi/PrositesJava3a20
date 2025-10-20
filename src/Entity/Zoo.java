@@ -6,6 +6,8 @@ public class Zoo {
     private String city;
     private final	int NbrCages=25;
     private int nbAnimals = 0;
+    public Aquatic[] aquaticAnimals  = new Aquatic[10];
+    int i=0;
 
     public Zoo() {}
     public Zoo( String name, String city) {
@@ -107,6 +109,36 @@ return -1;
         if (z1.nbAnimals>z2.nbAnimals)
             return z1;
         return z2;
+    }
+
+    public void addAquaticAnimal(Aquatic aquatic){
+        if(aquatic == null)
+            return;
+        if (i==10){
+            System.out.println("aquatic Animals is full");
+            return;
+        }
+        for(Aquatic a : aquaticAnimals){
+            aquaticAnimals[i] = aquatic;
+            i++;
+            return;
+        }
+    }
+    public void afficheraquaticAnimals(){
+        for(Aquatic a : aquaticAnimals){
+            System.out.println(a);
+        }
+    }
+    public void swimAffichage(){
+        for (Aquatic a : aquaticAnimals) {
+            if (a == null) {
+                return;
+            }
+           a.swim();
+        }
+    }
+    public float maxPenguinSwimmingDepth(){
+        return 1;
     }
 
     public String toString(){
