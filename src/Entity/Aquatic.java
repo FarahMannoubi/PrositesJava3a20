@@ -7,7 +7,7 @@ public abstract sealed class Aquatic extends Animal permits Dolphin,Penguin  {
         this.habitat = habitat;
     }
     public Aquatic(){}
-    public abstract void swim();
+   // public abstract void swim();
 
     @Override
     public boolean equals(Object obj) {

@@ -1,4 +1,6 @@
 import Entity.*;
+import exception.InvalidAgeException;
+import exception.ZooFullException;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -8,7 +10,12 @@ public class Main {
 Animal chien = new Animal();
         chien.setName("chien");
         chien.setName("loulou");
-        chien.setAge(1);
+        try {
+            chien.setAge(-1);
+
+        } catch (InvalidAgeException e) {
+            System.err.println(e.getMessage());
+        }
         chien.setMammal(true);
         System.out.println(chien.getName());
         System.out.println(chien.getAge());
@@ -20,6 +27,15 @@ System.out.println(chat.getName());
 System.out.println(chien);
 System.out.println(chat);
 Zoo zoo = new Zoo();
+System.out.println("////////////////////////////////////zoo.addAnimal(chien);///////////////////////////////////////////////////");
+
+
+
+zoo.addAnimal(chien);
+zoo.addAnimal(chien);
+        zoo.addAnimal(chien);
+
+
 System.out.println(zoo.getAnimals().length);
 Zoo zoo2 = new Zoo("My zoo","Nabeul");
 System.out.println(zoo2.getAnimals().length);
@@ -48,7 +64,7 @@ System.out.println(a1);
 System.out.println(ter2);
 System.out.println(d2);
 System.out.println(p1);
-d2.swim();
+//d2.swim();
 p1.swim(12);
 Animal animal =new Animal();
 //Dolphin dolphin = (Dolphin) animal;
@@ -72,6 +88,11 @@ Aquatic animal3=new Penguin("","test",1,true,"",12);
 zoo.addAquaticAnimal(animal2);
 zoo.addAquaticAnimal(animal3);
 zoo.afficheraquaticAnimals();
+        try {
+            zoo.addAnimal2(new Animal());
+        } catch (ZooFullException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     }

@@ -1,4 +1,7 @@
 package Entity;
+
+import exception.InvalidAgeException;
+
 public sealed class Animal permits Aquatic,Terrestral {
     protected String family;
     protected String name;
@@ -8,8 +11,12 @@ public sealed class Animal permits Aquatic,Terrestral {
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
         this.name = name;
-this.setAge(age);
-this.isMammal = isMammal;
+        try {
+            this.setAge(age);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+        this.isMammal = isMammal;
     }
 
     public String getFamily() {
@@ -24,10 +31,9 @@ this.isMammal = isMammal;
         return age;
     }
 
-    public void setAge(int age) {
-        if (age < 0) {
-            System.out.println("Age can't be negative");
-            return;
+    public void setAge(int age) throws InvalidAgeException {
+        if (age <= 0) {
+          throw new  InvalidAgeException ("Invalid age");
         }
         this.age = age;
     }

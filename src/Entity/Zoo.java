@@ -1,7 +1,9 @@
 package Entity;
 
+import exception.ZooFullException;
+
 public class Zoo {
-   private Animal[] animals = new Animal[25] ;
+   private Animal[] animals = new Animal[2] ;
   private String name;
     private String city;
     private final	int NbrCages=25;
@@ -18,19 +20,32 @@ public class Zoo {
 
 
 
-   public boolean addAnimal(Animal animal){
-       if (searchAnimal(animal)!=-1)
-           return true;
-    for (int i = 0; i < animals.length; i++) {
-       if(animals[i] == null){
-           animals[i] = animal;
-           return true;
-
+   public void addAnimal(Animal animal)
+           //throws ZooFullException
+    {
+      /* try{
+           if(isZooFull()){
+               throw new ZooFullException("Zoo is full");
+           }*/
+         //  if (searchAnimal(animal)!=-1)
+       try {
+           for (int i = 0; i <= animals.length; i++) {
+               if (animals[i] == null) {
+                   System.out.println("animal" +animal);
+                   animals[i] = animal;
+               }
+           }
+       }catch (Exception e) {
+           System.err.println("animal" +animal+e.getMessage());
        }
 
+     /*  }catch(Exception e){
+            System.err.println(e.getMessage());
+      }*/
+
+
     }
-   return false;
-    }
+
 
     public boolean addAnimal1(Animal animal){
         if (searchAnimal(animal)!=-1)
@@ -49,13 +64,14 @@ return false;
 
     }
 
-    boolean addAnimal2(Animal animal) {
+   public void addAnimal2(Animal animal)throws ZooFullException {
 
         if (nbAnimals == animals.length)
-            return false;
+        {
+            throw new ZooFullException("Zoo Full!");
+        }
         animals[nbAnimals] = animal;
         nbAnimals++;
-        return true;
     }
 
 
@@ -136,7 +152,7 @@ return -1;
             if (a == null) {
                 return;
             }
-           a.swim();
+         //  a.swim();
         }
     }
     public float maxPenguinSwimmingDepth(){

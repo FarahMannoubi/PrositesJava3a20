@@ -15,9 +15,9 @@ this.isMammal=isMammal;
 this.family=family;
 this.swimmingSpeed = swimmingSpeed;
 }
-public void swim(){
+/*public void swim(){
     System.out.println("This dolphin is swimming");
-}
+}*/
 public String toString(){
     return super.toString()+swimmingSpeed+" "+name;
 }
