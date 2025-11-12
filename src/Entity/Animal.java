@@ -2,12 +2,16 @@ package Entity;
 
 import exception.InvalidAgeException;
 
-public sealed class Animal permits Aquatic,Terrestral {
+import java.util.ArrayList;
+import java.util.List;
+
+public sealed class Animal permits Aquatic,Terrestral  {
     protected String family;
     protected String name;
     protected   int age;
     protected  boolean isMammal;
-    public Animal() {}
+    public Animal() {
+    }
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
         this.name = name;

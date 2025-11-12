@@ -1,6 +1,8 @@
 package Entity;
 
-public non-sealed class Dolphin extends Aquatic {
+import java.io.Serializable;
+
+public non-sealed class Dolphin extends Aquatic implements Comparable<Dolphin> {
 private float swimmingSpeed;
 
     public Dolphin(float swimmingSpeed) {
@@ -21,4 +23,9 @@ this.swimmingSpeed = swimmingSpeed;
 public String toString(){
     return super.toString()+swimmingSpeed+" "+name;
 }
+
+    @Override
+    public int compareTo(Dolphin o) {
+        return this.age-o.age;
+    }
 }

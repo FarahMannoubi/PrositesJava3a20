@@ -2,6 +2,8 @@ import Entity.*;
 import exception.InvalidAgeException;
 import exception.ZooFullException;
 
+import java.util.Collections;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -79,7 +81,7 @@ Dolphin dolphin3 = (Dolphin) animal1;
 //zoo.addAquaticAnimal(dolphin3);
 //zoo.addAquaticAnimal(p1);
 System.out.println("////////////////////////////");
-zoo.afficheraquaticAnimals();
+/*zoo.afficheraquaticAnimals();
 zoo.swimAffichage();
 System.out.println(zoo.maxPenguinSwimmingDepth());
 zoo.displayNumberOfAquaticsByType();
@@ -92,7 +94,17 @@ zoo.afficheraquaticAnimals();
             zoo.addAnimal2(new Animal());
         } catch (ZooFullException e) {
             System.err.println(e.getMessage());
-        }
-    }
+        }*/
+
+        Zoo zoo1 = new Zoo();
+
+        zoo1.addAnimals(new Dolphin("famille2","soso1",20,true,4));
+        zoo1.addAnimals(new Dolphin("famille2","soso2",10,true,4));
+        zoo1.addAnimals(new Dolphin("famille2","soso3",50,true,4));
+System.out.println(zoo1.animalsListes);
+zoo1.sortAnimals();
+        System.out.println(zoo1.animalsListes);
+        Collections.sort(zoo1.animalsListes,new CompAge().thenComparing(new CompName()));
 
     }
+}

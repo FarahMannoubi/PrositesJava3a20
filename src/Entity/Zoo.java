@@ -2,8 +2,14 @@ package Entity;
 
 import exception.ZooFullException;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Zoo {
-   private Animal[] animals = new Animal[2] ;
+    public List<Dolphin> animalsListes;
+
+    private Animal[] animals = new Animal[2] ;
   private String name;
     private String city;
     private final	int NbrCages=25;
@@ -11,13 +17,22 @@ public class Zoo {
     public Aquatic[] aquaticAnimals  = new Aquatic[10];
     int i=0;
 
-    public Zoo() {}
+    public Zoo() {
+        animalsListes = new ArrayList<Dolphin>();
+
+    }
     public Zoo( String name, String city) {
     this.animals  = new Animal[NbrCages] ;
      this.setName(name);
      this.city = city;
     }
-
+public void addAnimals(Dolphin animal)
+{
+    animalsListes.add(animal);
+}
+public void sortAnimals(){
+    Collections.sort(animalsListes);
+}
 
 
    public void addAnimal(Animal animal)
